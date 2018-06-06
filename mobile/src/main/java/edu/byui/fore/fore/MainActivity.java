@@ -10,6 +10,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    //Hello my good friends it is I testing the merge conflict
+
     // Testing Merge Conflict
     // Eddie Test Conflict
 }
