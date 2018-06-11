@@ -14,4 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     // Testing Merge Conflict
     // Eddie Test Conflict
+    //Testing Merge Conflict again
+    // Testing Merge Conflict again
 }
