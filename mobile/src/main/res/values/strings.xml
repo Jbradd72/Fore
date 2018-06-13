@@ -4,4 +4,5 @@
     <string name="mainButtonChooseCourse">Select Your Course</string>
     <string name="mainLogo">Generic Golf Logo</string>
     <string name="title_activity_add_course">AddCourseActivity</string>
+    <string name="courseName"> Course Name</string>
 </resources>
