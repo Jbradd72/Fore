@@ -21,7 +21,8 @@
         <activity
             android:name=".AddCourseActivity"
             android:label="@string/title_activity_add_course"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".strokeCounter_activity"></activity>
     </application>
 
 </manifest>
