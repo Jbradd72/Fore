@@ -1,7 +1,9 @@
 package edu.byui.fore.fore;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainWearActivity extends WearableActivity {
@@ -18,4 +20,15 @@ public class MainWearActivity extends WearableActivity {
         // Enables Always-on
         setAmbientEnabled();
     }
+
+    public void addCourse(View v){
+        Intent tutorialPage = new Intent(this, activity_courseAdd.class);
+        startActivity(tutorialPage);
+    }
+
+    public void selectCourse(View v){
+        Intent tutorialPage = new Intent(this, activity_courseSelect.class);
+        startActivity(tutorialPage);
+    }
+
 }
