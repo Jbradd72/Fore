@@ -22,7 +22,9 @@
             android:name=".AddCourseActivity"
             android:label="@string/title_activity_add_course"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".strokeCounter_activity"></activity>
+        <activity android:name=".strokeCounter_activity" />
+        <activity android:name=".Course_Selection" />
+        <activity android:name=".statsActivity"></activity>
     </application>
 
 </manifest>

@@ -15,6 +15,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="212dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -278,237 +280,263 @@
                     app:layout_constraintTop_toBottomOf="@+id/hole8" />
 
             </TableRow>
---
+            --
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/hole10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 10:"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@id/hole10par"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole9" />
+                <TextView
+                    android:id="@+id/hole10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 10:"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@id/hole10par"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole9" />
 
-            <EditText
-                android:id="@+id/hole10par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Par for hole 10"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole10"
-                app:layout_constraintTop_toBottomOf="@+id/hole9" />
+                <EditText
+                    android:id="@+id/hole10par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Par for hole 10"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole10"
+                    app:layout_constraintTop_toBottomOf="@+id/hole9" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 11:"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@+id/hole11par"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole10" />
 
-            <EditText
-                android:id="@+id/hole11par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Par for hole 11"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole11"
-                app:layout_constraintTop_toBottomOf="@+id/hole10par" />
+                <TextView
+                    android:id="@+id/hole11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 11:"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/hole11par"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole10" />
+
+                <EditText
+                    android:id="@+id/hole11par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Par for hole 11"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole11"
+                    app:layout_constraintTop_toBottomOf="@+id/hole10par" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 12:"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@+id/hole12par"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole11" />
 
-            <EditText
-                android:id="@+id/hole12par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Par for hole 12"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole11par" />
+                <TextView
+                    android:id="@+id/hole12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 12:"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@+id/hole12par"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole11" />
+
+                <EditText
+                    android:id="@+id/hole12par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Par for hole 12"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole11par" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 13:"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole12" />
 
-            <EditText
-                android:id="@+id/hole13par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Par for hole 13"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole13"
-                app:layout_constraintTop_toBottomOf="@+id/hole12par" />
+                <TextView
+                    android:id="@+id/hole13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 13:"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole12" />
+
+                <EditText
+                    android:id="@+id/hole13par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Par for hole 13"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole13"
+                    app:layout_constraintTop_toBottomOf="@+id/hole12par" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole14"
-                android:layout_width="83dp"
-                android:layout_height="28dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="8dp"
-                android:text="Hole 14:"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole13" />
 
-            <EditText
-                android:id="@+id/hole14par"
-                android:layout_width="147dp"
-                android:layout_height="28dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:ems="10"
-                android:hint="Par for hole 14"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole14"
-                app:layout_constraintTop_toBottomOf="@+id/hole13par" />
+                <TextView
+                    android:id="@+id/hole14"
+                    android:layout_width="83dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Hole 14:"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole13" />
+
+                <EditText
+                    android:id="@+id/hole14par"
+                    android:layout_width="147dp"
+                    android:layout_height="28dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:hint="Par for hole 14"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole14"
+                    app:layout_constraintTop_toBottomOf="@+id/hole13par" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 15:"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole14" />
 
-            <EditText
-                android:id="@+id/hole15par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Par for hole 15"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole15"
-                app:layout_constraintTop_toBottomOf="@+id/hole14" />
+                <TextView
+                    android:id="@+id/hole15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 15:"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole14" />
+
+                <EditText
+                    android:id="@+id/hole15par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Par for hole 15"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole15"
+                    app:layout_constraintTop_toBottomOf="@+id/hole14" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 16:"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole15" />
 
-            <EditText
-                android:id="@+id/hole16par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Par for hole 16"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole16"
-                app:layout_constraintTop_toBottomOf="@+id/hole15" />
+                <TextView
+                    android:id="@+id/hole16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 16:"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole15" />
+
+                <EditText
+                    android:id="@+id/hole16par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Par for hole 16"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole16"
+                    app:layout_constraintTop_toBottomOf="@+id/hole15" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 17:"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole16" />
 
-            <EditText
-                android:id="@+id/hole17par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Par for hole 17"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole17"
-                app:layout_constraintTop_toBottomOf="@+id/hole16" />
+                <TextView
+                    android:id="@+id/hole17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 17:"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole16" />
+
+                <EditText
+                    android:id="@+id/hole17par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Par for hole 17"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole17"
+                    app:layout_constraintTop_toBottomOf="@+id/hole16" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <TextView
-                android:id="@+id/hole18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hole 18:"
-                android:visibility="visible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hole17" />
 
-            <EditText
-                android:id="@+id/hole18par"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Par for hole 18"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hole18"
-                app:layout_constraintTop_toBottomOf="@+id/hole17" />
+                <TextView
+                    android:id="@+id/hole18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hole 18:"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hole17" />
+
+                <EditText
+                    android:id="@+id/hole18par"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Par for hole 18"
+                    android:inputType="number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hole18"
+                    app:layout_constraintTop_toBottomOf="@+id/hole17" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit" />
             </TableRow>
         </TableLayout>
     </ScrollView>
