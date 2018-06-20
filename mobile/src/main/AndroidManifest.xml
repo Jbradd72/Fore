@@ -24,7 +24,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".strokeCounter_activity" />
         <activity android:name=".Course_Selection" />
-        <activity android:name=".statsActivity"></activity>
+        <activity android:name=".statsActivity" />
     </application>
 
 </manifest>
