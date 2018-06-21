@@ -1,10 +1,15 @@
 <resources>
-    <string name="app_name">Fore</string>
+    <string name="app_name" style="text-align:center;">Fore</string>
+    <string name="mainButtonAddCourse">Add New Course</string>
+    <string name="mainButtonChooseCourse">Select Your Course</string>
+    <string name="mainLogo">Generic Golf Logo</string>
+    <string name="title_activity_add_course">AddCourseActivity</string>
+    <string name="courseName"> Course Name</string>
+    <string name="increment">Stroke Counter</string>
+    <string name="title_activity_course_confirmation">CourseConfirmation</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
-    <string name="title_activity_stroke_counter_wear">activity_strokeCounter_wear</string>
-    <string name="title_activity_course_select">activity_courseSelect</string>
 </resources>
