@@ -1,9 +1,9 @@
 package edu.byui.fore.fore;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.wearable.activity.WearableActivity;
 
-public class activityStrokeCounter extends AppCompatActivity {
+public class activityStrokeCounter extends WearableActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
