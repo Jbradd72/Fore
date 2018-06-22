@@ -1,11 +1,12 @@
 package edu.byui.fore.fore;
 
+import java.io.Serializable;
 import java.util.Queue;
 import java.util.Set;
 import java.util.List;
 import com.google.gson.Gson;
 
-public class Course {
+public class Course implements Serializable {
     Queue<Game> games;
     List<Integer> Pars;
     Game currentGame;

@@ -25,6 +25,7 @@
         <activity android:name=".strokeCounter_activity" />
         <activity android:name=".Course_Selection" />
         <activity android:name=".statsActivity" />
+        <activity android:name=".GameSummaryActivity"></activity>
     </application>
 
 </manifest>
