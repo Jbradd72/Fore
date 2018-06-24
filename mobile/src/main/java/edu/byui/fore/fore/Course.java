@@ -10,6 +10,7 @@ public class Course implements Serializable {
     Queue<Game> games;
     List<Integer> Pars;
     Game currentGame;
+    String name;
 
     public Course(List<Integer> pars) {
         Pars = pars;
@@ -30,6 +31,9 @@ public class Course implements Serializable {
     public void setCurrentGame(Game currentGame) {
         this.currentGame = currentGame;
     }
+
+    public void setName(String s){this.name = s;}
+    public String getName(){return name;}
 
     Gson g;
 

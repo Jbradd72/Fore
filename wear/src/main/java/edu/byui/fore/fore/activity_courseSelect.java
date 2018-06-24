@@ -15,10 +15,7 @@ public class activity_courseSelect extends WearableActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_select);
 
-        mTextView = (TextView) findViewById(R.id.text);
-
-        // Enables Always-on
-        setAmbientEnabled();
+        mTextView = findViewById(R.id.text);
     }
     public void confirmCourse(View v){
         Intent tutorialPage = new Intent(this, CourseConfirmation.class);

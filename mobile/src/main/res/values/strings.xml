@@ -1,4 +1,5 @@
 <resources>
+    <string name="filename" >courses.txt</string>
     <string name="app_name" style="text-align:center;">Fore</string>
     <string name="mainButtonAddCourse">Add New Course</string>
     <string name="mainButtonChooseCourse">Select Your Course</string>

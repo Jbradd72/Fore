@@ -26,7 +26,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/acCourseName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -51,7 +51,7 @@
                     android:visibility="visible"
                     app:layout_constraintEnd_toStartOf="@id/hole1par"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText" />
+                    app:layout_constraintTop_toBottomOf="@+id/acCourseName" />
 
                 <EditText
                     android:id="@+id/hole1par"
@@ -535,7 +535,8 @@
                     android:id="@+id/submitButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Submit" />
+                    android:text="Submit"
+                    android:onClick="submit"/>
             </TableRow>
         </TableLayout>
     </ScrollView>
