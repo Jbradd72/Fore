@@ -3,6 +3,7 @@ package edu.byui.fore.fore;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.gson.Gson;
@@ -43,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<Course>>(){}.getType();
         courseList = gson.fromJson(jsonStr, listType);
+
+        if (courseList == null){
+            courseList = new ArrayList<>();
+        }
+        //Log.w("Main Activity", ((Integer)(courseList.size())).toString());
     }
 
     public void selectCourse(View view){
