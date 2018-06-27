@@ -9,6 +9,7 @@ public class CourseConfirmation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_confirmation);
+        Course course2play = (Course)getIntent().getSerializableExtra("Course");
 
     }
 }

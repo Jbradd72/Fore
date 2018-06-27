@@ -1,6 +1,8 @@
 package edu.byui.fore.fore;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Queue;
 import java.util.Set;
 import java.util.List;
@@ -14,6 +16,13 @@ public class Course implements Serializable {
 
     public Course(List<Integer> pars) {
         Pars = pars;
+    }
+
+    public Course(){
+        this.name = "";
+        List<Integer> p = new ArrayList<>(18);
+        Collections.fill(p, 0);
+        Pars = p;
     }
 
     public List<Integer> getPars() {

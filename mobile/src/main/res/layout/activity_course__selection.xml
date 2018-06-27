@@ -26,9 +26,24 @@
                 android:onClick="confirmCourse"/>
 
             <Spinner
-                android:id="@+id/planets_spinner"
+                android:id="@+id/courseSpinner"
                 android:layout_width="fill_parent"
-                android:layout_height="41dp" />
+                android:layout_height="41dp">
+
+                <TextView
+                    android:id="@+id/test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course Select" />
+
+                <TextView
+                    android:id="@+id/test1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Course Select" />
+
+
+            </Spinner>
 
         </LinearLayout>
 </android.support.constraint.ConstraintLayout>
