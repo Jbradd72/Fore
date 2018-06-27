@@ -7,4 +7,5 @@
     <string name="title_activity_add_course">AddCourseActivity</string>
     <string name="courseName"> Course Name</string>
     <string name="increment">Stroke Counter</string>
+    <string name="title_activity_course_confirmation">CourseConfirmation</string>
 </resources>

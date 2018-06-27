@@ -20,7 +20,7 @@ public class Course_Selection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course__selection);
 
-        courseList = (List<Course>)getIntent().getSerializableExtra("Courses");
+        courseList = (ArrayList<Course>)getIntent().getSerializableExtra("Courses");
         List<String> courseNamesList = new ArrayList<>();
 
         for (Course course : courseList){
