@@ -37,7 +37,7 @@ public class AddCourseActivity extends AppCompatActivity {
             i += 1;
         }
         Course newCourse = new Course(pars);
-        newCourse.setName(((EditText) findViewById(R.id.acCourseName)).toString());
+        newCourse.setName(((EditText) findViewById(R.id.acCourseName)).getText().toString());
         courses.add(newCourse);
         Intent intent = new Intent(this, Course_Selection.class);
         intent.putExtra("Courses", (Serializable)courses);

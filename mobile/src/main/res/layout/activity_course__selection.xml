@@ -6,44 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".Course_Selection">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Select" />
+
+        <Button
+            android:id="@+id/EmptyCourse"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:layout_height="wrap_content"
+            android:onClick="confirmCourse"
+            android:text="Empty Course" />
 
-            <TextView
-                android:id="@+id/text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Course Select" />
+        <Spinner
+            android:id="@+id/courseSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="41dp">
 
-            <Button
-                android:id="@+id/EmptyCourse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Empty Course"
-                android:onClick="confirmCourse"/>
+        </Spinner>
 
-            <Spinner
-                android:id="@+id/courseSpinner"
-                android:layout_width="fill_parent"
-                android:layout_height="41dp">
+        <Button
+            android:id="@+id/button"
+            android:layout_width="245dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="25dp"
+            android:onClick="confirmCourse"
+            android:text="Submit"
+            tools:text="Submit" />
 
-                <TextView
-                    android:id="@+id/test"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Course Select" />
-
-                <TextView
-                    android:id="@+id/test1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Course Select" />
-
-
-            </Spinner>
-
-        </LinearLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
