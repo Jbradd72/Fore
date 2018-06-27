@@ -2,11 +2,14 @@ package edu.byui.fore.fore;
 import java.sql.Time;
 import java.util.Date;
 import java.util.Set;
+import edu.byui.fore.fore.GameTypes;
+
+import static edu.byui.fore.fore.GameTypes.*;
 
 public class Game {
     Time time;
     Set<Hole> holes;
-    int type;
+    GameTypes type;
 
     public Game() {
         for (int i = 0; i < 18; i++)
@@ -14,7 +17,18 @@ public class Game {
             Hole temp = new Hole();
             holes.add(temp);
         }
-        type = 0;
+        type = FULL_18;
+
+        time = (Time) new Date();
+    }
+
+    public Game(GameTypes type){
+        for (int i = 0; i < 18; i++)
+        {
+            Hole temp = new Hole();
+            holes.add(temp);
+        }
+        this.type = type;
 
         time = (Time) new Date();
     }
@@ -35,11 +49,11 @@ public class Game {
         this.holes = holes;
     }
 
-    public int getType() {
+    public GameTypes getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(GameTypes type) {
         this.type = type;
     }
 }

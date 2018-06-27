@@ -2,6 +2,10 @@ package edu.byui.fore.fore;
 
 public class Hole {
 
+    int strokes;
+    Integer par;
+    int Id;
+
     public Hole() {
         strokes = 0;
         par = 0;
@@ -33,10 +37,4 @@ public class Hole {
     public void incrementStrokes() {
         strokes++;
     }
-
-    int strokes;
-    Integer par;
-    int Id;
-
-
 }
