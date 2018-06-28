@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +50,7 @@ public class Course_Selection extends AppCompatActivity {
 
         Intent tutorialPage = new Intent(this, CourseConfirmation.class);
         tutorialPage.putExtra("Course", course2play);
+        tutorialPage.putExtra("Courses", (Serializable)courseList);
         startActivity(tutorialPage);
     }
 }
