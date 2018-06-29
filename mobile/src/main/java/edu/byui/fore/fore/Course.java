@@ -16,13 +16,16 @@ public class Course implements Serializable {
 
     public Course(List<Integer> pars) {
         Pars = pars;
+        currentGame = new Game();
+        name = "Name not Set";
     }
 
     public Course(){
-        this.name = "";
+        this.name = "Name not Set";
         List<Integer> p = new ArrayList<>(18);
         Collections.fill(p, 0);
         Pars = p;
+        currentGame = new Game();
     }
 
     public List<Integer> getPars() {

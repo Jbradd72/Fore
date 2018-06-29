@@ -22,6 +22,7 @@ public class CourseConfirmation extends AppCompatActivity {
     public void submitCourse(View v) {
         Intent intent = new Intent(this, strokeCounter_activity.class);
         intent.putExtra("Course", course2play);
+        intent.putExtra("Courses", getIntent().getSerializableExtra("Courses"));
         startActivity(intent);
     }
 

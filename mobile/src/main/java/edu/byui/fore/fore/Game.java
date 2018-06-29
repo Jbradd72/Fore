@@ -1,17 +1,23 @@
 package edu.byui.fore.fore;
+import android.util.ArraySet;
+
+import java.io.Serializable;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import edu.byui.fore.fore.GameTypes;
 
 import static edu.byui.fore.fore.GameTypes.*;
 
-public class Game {
+public class Game implements Serializable {
     Time time;
-    Set<Hole> holes;
+    List<Hole> holes;
     GameTypes type;
 
     public Game() {
+        holes = new ArrayList<Hole>();
         for (int i = 0; i < 18; i++)
         {
             Hole temp = new Hole();
@@ -19,13 +25,13 @@ public class Game {
         }
         type = FULL_18;
 
-        time = (Time) new Date();
+        //time = (Time) new Date();
     }
 
     public Game(GameTypes type){
         for (int i = 0; i < 18; i++)
         {
-            Hole temp = new Hole();
+            Hole temp = new Hole(i+1);
             holes.add(temp);
         }
         this.type = type;
@@ -41,11 +47,11 @@ public class Game {
         this.time = time;
     }
 
-    public Set<Hole> getHoles() {
+    public List<Hole> getHoles() {
         return holes;
     }
 
-    public void setHoles(Set<Hole> holes) {
+    public void setHoles(List<Hole> holes) {
         this.holes = holes;
     }
 

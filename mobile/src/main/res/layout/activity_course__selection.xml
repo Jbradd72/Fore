@@ -24,13 +24,15 @@
             android:id="@+id/EmptyCourse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="confirmCourse"
+            android:onClick="emptyCourse"
             android:text="Empty Course" />
 
         <Spinner
             android:id="@+id/courseSpinner"
             android:layout_width="fill_parent"
-            android:layout_height="41dp">
+            android:layout_marginTop="15dp"
+            android:layout_height="41dp"
+            android:hint="Select Course">
 
         </Spinner>
 
@@ -43,5 +45,40 @@
             android:text="Submit"
             tools:text="Submit" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioGroup
+                android:id="@+id/courseRG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@id/all_18">
+
+                <RadioButton
+                    android:id="@+id/all_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All 18" />
+
+                <RadioButton
+                    android:id="@+id/front9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Front 9" />
+
+                <RadioButton
+                    android:id="@+id/back9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Back 9" />
+            </RadioGroup>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

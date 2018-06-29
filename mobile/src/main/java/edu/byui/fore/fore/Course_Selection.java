@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -37,9 +39,34 @@ public class Course_Selection extends AppCompatActivity {
         mTextView = findViewById(R.id.text);
     }
 
+    public void emptyCourse(View v){
+        Course emptyCourse = new Course();
+
+        Intent tutorialPage = new Intent(this, CourseConfirmation.class);
+        tutorialPage.putExtra("Course", emptyCourse);
+        tutorialPage.putExtra("Courses", (Serializable)courseList);
+        startActivity(tutorialPage);
+    }
+
     public void confirmCourse(View v){
         Spinner s = findViewById(R.id.courseSpinner);
         String name = s.getSelectedItem().toString();
+
+        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.courseRG);
+
+        int selectedID = radioGroup.getCheckedRadioButtonId();
+        RadioButton radioButton = (RadioButton) radioGroup.findViewById(selectedID);
+        String selectedtext =   radioButton.getText().toString();
+
+
+        GameTypes type = GameTypes.FULL_18;
+        if (selectedtext.equals("Front 9")){
+            type = GameTypes.FRONT_9;
+        }
+        else if (selectedtext.equals("Back 9")){
+            type = GameTypes.BACK_9;
+        }
+
         Course course2play = new Course();
 
         for (Course course : courseList){
@@ -48,9 +75,10 @@ public class Course_Selection extends AppCompatActivity {
             }
         }
 
-        Intent tutorialPage = new Intent(this, CourseConfirmation.class);
-        tutorialPage.putExtra("Course", course2play);
-        tutorialPage.putExtra("Courses", (Serializable)courseList);
-        startActivity(tutorialPage);
+        course2play.getCurrentGame().setType(type);
+        Intent intent = new Intent(this, CourseConfirmation.class);
+        intent.putExtra("Course", course2play);
+        intent.putExtra("Courses", (Serializable)courseList);
+        startActivity(intent);
     }
 }

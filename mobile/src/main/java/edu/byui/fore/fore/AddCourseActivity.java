@@ -1,6 +1,7 @@
 package edu.byui.fore.fore;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -32,8 +33,17 @@ public class AddCourseActivity extends AppCompatActivity {
         List<Integer>  pars = new ArrayList<>(18);
         int i = 0;
         for (int holeId : ids){
-            String numString = ((EditText)findViewById(holeId)).getText().toString();
-            pars.add(i,Integer.parseInt(numString));
+            EditText et = findViewById(holeId);
+            String numString = et.getText().toString();
+            if (numString.length() > 0) {
+                et.setBackgroundColor(Color.TRANSPARENT);
+                Integer par = Integer.parseInt(numString);
+                pars.add(i, par);
+            }
+            else if (numString.length() <= 0){
+                et.setBackgroundColor(Color.RED);
+                return;
+            }
             i += 1;
         }
         Course newCourse = new Course(pars);
