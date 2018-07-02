@@ -15,8 +15,10 @@ public class Game implements Serializable {
     Time time;
     List<Hole> holes;
     GameTypes type;
+    Integer total;
 
     public Game() {
+        total = 0;
         holes = new ArrayList<Hole>();
         for (int i = 0; i < 18; i++)
         {
@@ -29,6 +31,7 @@ public class Game implements Serializable {
     }
 
     public Game(GameTypes type){
+        total = 0;
         for (int i = 0; i < 18; i++)
         {
             Hole temp = new Hole(i+1);
@@ -62,4 +65,8 @@ public class Game implements Serializable {
     public void setType(GameTypes type) {
         this.type = type;
     }
+
+    public void setTotal(Integer i){this.total = i;}
+
+    public Integer getTotal(){return this.total;}
 }

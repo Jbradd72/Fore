@@ -42,10 +42,12 @@ public class Course_Selection extends AppCompatActivity {
     public void emptyCourse(View v){
         Course emptyCourse = new Course();
 
-        Intent tutorialPage = new Intent(this, CourseConfirmation.class);
-        tutorialPage.putExtra("Course", emptyCourse);
-        tutorialPage.putExtra("Courses", (Serializable)courseList);
-        startActivity(tutorialPage);
+        Intent intent = new Intent(this, CourseConfirmation.class);
+        intent.putExtra("Course", emptyCourse);
+        intent.putExtra("Courses", (Serializable)courseList);
+        Integer test = 0;
+        intent.putExtra("Hole", test);
+        startActivity(intent);
     }
 
     public void confirmCourse(View v){
@@ -79,6 +81,7 @@ public class Course_Selection extends AppCompatActivity {
         Intent intent = new Intent(this, CourseConfirmation.class);
         intent.putExtra("Course", course2play);
         intent.putExtra("Courses", (Serializable)courseList);
+        intent.putExtra("Hole", Integer.valueOf(0));
         startActivity(intent);
     }
 }

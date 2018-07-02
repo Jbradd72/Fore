@@ -47,7 +47,18 @@ public class Course implements Serializable {
     public void setName(String s){this.name = s;}
     public String getName(){return name;}
 
-    Gson g;
+
+    public Integer getHoleAverage(int index){
+        int totalStrokes = 0;
+        int numHoles = 0;
+        if (games != null){
+            for (Game game: games) {
+                totalStrokes += game.getHoles().get(index).getStrokes();
+                numHoles++;
+            }
+        }
+        return (totalStrokes / numHoles);
+    }
 
 
 }

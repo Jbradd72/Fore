@@ -23,6 +23,7 @@ public class CourseConfirmation extends AppCompatActivity {
         Intent intent = new Intent(this, strokeCounter_activity.class);
         intent.putExtra("Course", course2play);
         intent.putExtra("Courses", getIntent().getSerializableExtra("Courses"));
+        intent.putExtra("Hole", 0);
         startActivity(intent);
     }
 

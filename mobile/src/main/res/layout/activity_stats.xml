@@ -15,17 +15,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Score"
-        app:layout_constraintBottom_toTopOf="@+id/totalStrokes"
+        app:layout_constraintBottom_toTopOf="@+id/currentStrokes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/totalStrokes"
+        android:id="@+id/currentStrokes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="104dp"
-        android:text="totalStrokes"
+        android:text="currentStrokes"
         app:layout_constraintBottom_toTopOf="@+id/averageStrokes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
