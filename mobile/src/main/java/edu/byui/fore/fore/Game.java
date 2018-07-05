@@ -13,13 +13,13 @@ import static edu.byui.fore.fore.GameTypes.*;
 
 public class Game implements Serializable {
     Time time;
-    List<Hole> holes;
+    private List<Hole> holes;
     GameTypes type;
-    Integer total;
+    private Integer total;
 
     public Game() {
         total = 0;
-        holes = new ArrayList<Hole>();
+        holes = new ArrayList<Hole>(18);
         for (int i = 0; i < 18; i++)
         {
             Hole temp = new Hole();
@@ -39,7 +39,7 @@ public class Game implements Serializable {
         }
         this.type = type;
 
-        time = (Time) new Date();
+       // time = (Time) new Date();
     }
 
     public Time getTime() {

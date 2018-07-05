@@ -57,7 +57,7 @@ public class strokeCounter_activity extends AppCompatActivity {
         Intent intent = new Intent(this, statsActivity.class);
         intent.putExtra("Course", course);
         intent.putExtra("Courses", getIntent().getSerializableExtra("Courses"));
-        intent.putExtra("Hole Number", holeNumber + 1);
+        intent.putExtra("Hole", holeNumber);
         startActivity(intent);
 
 

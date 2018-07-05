@@ -28,6 +28,17 @@ public class Course implements Serializable {
         currentGame = new Game();
     }
 
+    public Queue<Game> getGames(){return games;}
+    public void addCurrentGame(){
+        if (games.size() < 10){
+            games.add(currentGame);
+        }
+        else{
+            games.poll();
+            games.add(currentGame);
+        }
+    }
+
     public List<Integer> getPars() {
         return Pars;
     }
@@ -56,8 +67,13 @@ public class Course implements Serializable {
                 totalStrokes += game.getHoles().get(index).getStrokes();
                 numHoles++;
             }
+
+            return (totalStrokes / numHoles);
         }
-        return (totalStrokes / numHoles);
+        else{
+            return 0;
+        }
+
     }
 
 
