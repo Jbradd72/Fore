@@ -3,6 +3,7 @@ package edu.byui.fore.fore;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Course implements Serializable {
         Pars = pars;
         currentGame = new Game();
         name = "Name not Set";
+        games = new LinkedList<>();
     }
 
     public Course(){
