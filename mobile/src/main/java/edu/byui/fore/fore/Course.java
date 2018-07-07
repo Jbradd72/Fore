@@ -64,7 +64,7 @@ public class Course implements Serializable {
     public Integer getHoleAverage(int index){
         int totalStrokes = 0;
         int numHoles = 0;
-        if (games != null){
+        if (games.size() > 0){
             for (Game game: games) {
                 totalStrokes += game.getHoles().get(index).getStrokes();
                 numHoles++;

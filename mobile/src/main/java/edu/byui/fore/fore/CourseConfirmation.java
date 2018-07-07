@@ -20,10 +20,14 @@ public class CourseConfirmation extends AppCompatActivity {
     }
 
     public void submitCourse(View v) {
+        int hole = 0;
+        if(course2play.getCurrentGame().getType().equals(GameTypes.BACK_9)){
+            hole = 9;
+        }
         Intent intent = new Intent(this, strokeCounter_activity.class);
         intent.putExtra("Course", course2play);
         intent.putExtra("Courses", getIntent().getSerializableExtra("Courses"));
-        intent.putExtra("Hole", 0);
+        intent.putExtra("Hole", hole);
         startActivity(intent);
     }
 

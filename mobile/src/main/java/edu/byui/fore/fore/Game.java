@@ -34,7 +34,7 @@ public class Game implements Serializable {
         total = 0;
         for (int i = 0; i < 18; i++)
         {
-            Hole temp = new Hole(i+1);
+            Hole temp = new Hole();
             holes.add(temp);
         }
         this.type = type;

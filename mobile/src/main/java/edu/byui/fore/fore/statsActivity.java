@@ -13,12 +13,20 @@ public class statsActivity extends AppCompatActivity {
     private Course course;
     private Integer holeNumber;
 
-    @Override
+    private Integer stoppingPoint;
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
         course = (Course) getIntent().getSerializableExtra("Course");
+
+        if (course.getCurrentGame().getType().equals(GameTypes.FRONT_9)){
+            stoppingPoint = 9;
+        }
+        else{
+            stoppingPoint = 18;
+        }
 
         holeNumber = getIntent().getIntExtra("Hole", -1);
         Integer score = course.getCurrentGame().getTotal();

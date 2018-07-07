@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String jsonStr ="";
+        String jsonStr ="[";
         try {
-            FileReader fileReader = new FileReader(FILENAME);
+            FileReader fileReader = new FileReader(this.getFilesDir().getPath() + "/" + FILENAME);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             while (bufferedReader.read() != -1){
                     jsonStr  += bufferedReader.readLine();
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         }
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<Course>>(){}.getType();
-        courseList = gson.fromJson(jsonStr, listType);
+        courseList = (List<Course>)gson.fromJson(jsonStr, listType);
 
         if (courseList == null){
             courseList = new ArrayList<>();

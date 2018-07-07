@@ -25,16 +25,17 @@ public class GameSummaryActivity extends AppCompatActivity {
 
         course = (Course) getIntent().getSerializableExtra("Course");
 
-        EditText editText = findViewById(R.id.gsCourseName);
-        editText.setText(course.getName());
+        TextView textView = findViewById(R.id.gsCourseName);
+        textView.setText(course.getName());
 
-        TextView textView = findViewById(R.id.currentScore);
-        textView.setText(course.getCurrentGame().getTotal());
+        textView = findViewById(R.id.currentScore);
+        textView.setText(course.getCurrentGame().getTotal().toString());
 
         int[] ids = new int[]{R.id.game1score, R.id.game2score, R.id.game3score, R.id.game4score,
                               R.id.game5score, R.id.game6score, R.id.game7score, R.id.game8score,
                               R.id.game9score, R.id.game10score};
         int i = 0;
+        EditText editText;
         for (Game game: course.getGames()){
             editText = findViewById(ids[i]);
             editText.setText(game.getTotal());
@@ -62,10 +63,12 @@ public class GameSummaryActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = gson.toJson(courseList);
 
-        File file = getFilesDir();
+
         try {
-            FileWriter fileWriter = new FileWriter(file,false);
+            FileWriter fileWriter = new FileWriter(this.getFilesDir().getPath() + "/" + FILENAME,false);
             fileWriter.write(json);
+            fileWriter.flush();
+            fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

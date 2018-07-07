@@ -2,18 +2,18 @@ package edu.byui.fore.fore;
 
 import java.io.Serializable;
 
+/**
+ * Hole is the class representation of every single
+ * hole within a course. The game class uses a list
+ * of holes to keep track of the score.
+ * @author Max Schuhmacher
+ */
+
 public class Hole implements Serializable {
 
     int strokes;
-    int Id;
 
     public Hole() {
-        strokes = 0;
-        Id = 0;
-    }
-
-    public Hole(int Id) {
-        this.Id = Id;
         strokes = 0;
     }
 
