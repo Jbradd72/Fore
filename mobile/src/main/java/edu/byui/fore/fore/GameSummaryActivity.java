@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -43,7 +44,7 @@ public class GameSummaryActivity extends AppCompatActivity {
             i++;
         }
 
-
+        Toast.makeText(this, course.getCurrentGame().getTime(),Toast.LENGTH_SHORT).show();
     }
 
     public void finishGame(View view){

@@ -22,10 +22,10 @@ public class statsActivity extends AppCompatActivity {
         course = (Course) getIntent().getSerializableExtra("Course");
 
         if (course.getCurrentGame().getType().equals(GameTypes.FRONT_9)){
-            stoppingPoint = 9;
+            stoppingPoint = 8;
         }
         else{
-            stoppingPoint = 18;
+            stoppingPoint = 17;
         }
 
         holeNumber = getIntent().getIntExtra("Hole", -1);
@@ -40,13 +40,13 @@ public class statsActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.currentStrokes);
         textView.setText(((Integer)(course.getCurrentGame().getHoles().get(holeNumber).getStrokes())).toString());
-        Toast.makeText(this,holeNumber.toString(),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,holeNumber.toString(),Toast.LENGTH_SHORT).show();
 
 
     }
 
     public void nextHole(View view){
-        if (holeNumber < 17) {
+        if (holeNumber < stoppingPoint) {
             Intent intent = new Intent(this, strokeCounter_activity.class);
             intent.putExtra("Hole", getIntent().getIntExtra("Hole", -1) + 1);
             intent.putExtra("Course", course);
