@@ -24,6 +24,8 @@ public class CourseConfirmation extends AppCompatActivity {
         if(course2play.getCurrentGame().getType().equals(GameTypes.BACK_9)){
             hole = 9;
         }
+
+        course2play.getCurrentGame().startTime();
         Intent intent = new Intent(this, strokeCounter_activity.class);
         intent.putExtra("Course", course2play);
         intent.putExtra("Courses", getIntent().getSerializableExtra("Courses"));

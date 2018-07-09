@@ -12,7 +12,8 @@ import edu.byui.fore.fore.GameTypes;
 import static edu.byui.fore.fore.GameTypes.*;
 
 public class Game implements Serializable {
-    Time time;
+    Long startTime;
+    Long endTime;
     private List<Hole> holes;
     GameTypes type;
     private Integer total;
@@ -27,7 +28,6 @@ public class Game implements Serializable {
         }
         type = FULL_18;
 
-        //time = (Time) new Date();
     }
 
     public Game(GameTypes type){
@@ -42,12 +42,22 @@ public class Game implements Serializable {
        // time = (Time) new Date();
     }
 
-    public Time getTime() {
-        return time;
-    }
+    public void startTime(){this.startTime = System.currentTimeMillis();}
 
-    public void setTime(Time time) {
-        this.time = time;
+    public Integer[] getTime(){
+        this.endTime = System.currentTimeMillis();
+        Long totalSeconds = 1000 * (endTime - startTime);
+        Integer wholeHours = new Long(totalSeconds / 3600).intValue();
+        Integer wholeMinutes = new Long((totalSeconds % 3600) / 60).intValue();
+        Integer wholeSeconds = new Long((totalSeconds % 3600) % 60).intValue();
+
+        Integer time[] = new Integer[3];
+        time[0] = wholeHours;
+        time[1] = wholeMinutes;
+        time[2] = wholeSeconds;
+
+
+        return time;
     }
 
     public List<Hole> getHoles() {
