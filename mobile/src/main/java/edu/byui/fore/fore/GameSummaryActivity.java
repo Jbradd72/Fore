@@ -35,11 +35,11 @@ public class GameSummaryActivity extends AppCompatActivity {
                               R.id.game5score, R.id.game6score, R.id.game7score, R.id.game8score,
                               R.id.game9score, R.id.game10score};
         int i = 0;
-        EditText editText;
+
         for (Game game: course.getGames()){
-            editText = findViewById(ids[i]);
-            editText.setText(game.getTotal());
-            editText.setVisibility(View.VISIBLE);
+            textView = findViewById(ids[i]);
+            textView.setText(game.getTotal().toString());
+            textView.setVisibility(View.VISIBLE);
             i++;
         }
 
