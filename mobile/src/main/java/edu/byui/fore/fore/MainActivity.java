@@ -45,10 +45,14 @@ public class MainActivity extends AppCompatActivity {
         }
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<Course>>(){}.getType();
+
+        if(jsonStr.isEmpty()){
+
+            courseList = new ArrayList<>();
+        }
         courseList = (List<Course>)gson.fromJson(jsonStr, listType);
 
         if (courseList == null){
-            courseList = new ArrayList<>();
         }
         //Log.w("Main Activity", ((Integer)(courseList.size())).toString());
     }

@@ -3,9 +3,11 @@ package edu.byui.fore.fore;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.Touch;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -43,7 +45,7 @@ public class GameSummaryActivity extends AppCompatActivity {
             i++;
         }
 
-
+        Toast.makeText(this,course.getCurrentGame().getTime().toString(), Toast.LENGTH_SHORT);
     }
 
     public void finishGame(View view){
