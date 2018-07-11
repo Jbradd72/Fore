@@ -3,7 +3,6 @@ package edu.byui.fore.fore;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.Touch;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -37,15 +36,15 @@ public class GameSummaryActivity extends AppCompatActivity {
                               R.id.game5score, R.id.game6score, R.id.game7score, R.id.game8score,
                               R.id.game9score, R.id.game10score};
         int i = 0;
-        EditText editText;
+
         for (Game game: course.getGames()){
-            editText = findViewById(ids[i]);
-            editText.setText(game.getTotal());
-            editText.setVisibility(View.VISIBLE);
+            textView = findViewById(ids[i]);
+            textView.setText(game.getTotal().toString());
+            textView.setVisibility(View.VISIBLE);
             i++;
         }
 
-        Toast.makeText(this,course.getCurrentGame().getTime().toString(), Toast.LENGTH_SHORT);
+        Toast.makeText(this, course.getCurrentGame().getTime(),Toast.LENGTH_SHORT).show();
     }
 
     public void finishGame(View view){

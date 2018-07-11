@@ -20,7 +20,7 @@ public class strokeCounter_activity extends AppCompatActivity {
         setContentView(R.layout.activity_stroke_counter);
         strokes = 0;
         holeNumber = getIntent().getIntExtra("Hole", -1);
-        Toast.makeText(this, holeNumber.toString(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, holeNumber.toString(), Toast.LENGTH_SHORT).show();
 
         if (holeNumber < 0){
             Log.wtf("Stroke Counter Activity", "Negative Hole Number");

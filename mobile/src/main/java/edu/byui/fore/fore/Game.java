@@ -44,19 +44,14 @@ public class Game implements Serializable {
 
     public void startTime(){this.startTime = System.currentTimeMillis();}
 
-    public Integer[] getTime(){
+    public String getTime(){
         this.endTime = System.currentTimeMillis();
-        Long totalSeconds = 1000 * (endTime - startTime);
+        Long totalSeconds = (endTime - startTime) / 1000;
         Integer wholeHours = new Long(totalSeconds / 3600).intValue();
         Integer wholeMinutes = new Long((totalSeconds % 3600) / 60).intValue();
         Integer wholeSeconds = new Long((totalSeconds % 3600) % 60).intValue();
-
-        Integer time[] = new Integer[3];
-        time[0] = wholeHours;
-        time[1] = wholeMinutes;
-        time[2] = wholeSeconds;
-
-
+        String time = wholeHours.toString() + " Hours " + wholeMinutes.toString() + " Minutes " + wholeSeconds.toString() + " Seconds ";
+        //String time = new Long(this.endTime - this.startTime).toString();
         return time;
     }
 

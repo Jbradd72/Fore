@@ -30,15 +30,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        String jsonStr ="[";
+        String jsonStr ="";
         try {
             FileReader fileReader = new FileReader(this.getFilesDir().getPath() + "/" + FILENAME);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            while (bufferedReader.read() != -1){
-                    jsonStr  += bufferedReader.readLine();
-            }
+            jsonStr  += bufferedReader.readLine();
+            
         } catch (FileNotFoundException e) {
-           // Log.e();
+           Log.e("ERROR", "No file found");
 
         } catch (IOException e) {
             e.printStackTrace();
