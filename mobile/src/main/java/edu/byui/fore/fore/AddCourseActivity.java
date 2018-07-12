@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TableLayout;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class AddCourseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course);
+        TableLayout tableLayout = findViewById(R.id.tLayoutShrink);
+        tableLayout.setColumnShrinkable(1, true);
         courses = (ArrayList<Course>)getIntent().getSerializableExtra("Courses");
     }
 
@@ -45,6 +48,13 @@ public class AddCourseActivity extends AppCompatActivity {
         }
         Course newCourse = new Course(pars);
         newCourse.setName(((EditText) findViewById(R.id.acCourseName)).getText().toString());
+
+        for (Course c : courses){
+            if (courses.get(i).getName().equals(newCourse.getName())){
+                courses.set(i, newCourse);
+            }
+        }
+
         courses.add(newCourse);
         Intent intent = new Intent(this, Course_Selection.class);
         intent.putExtra("Courses", (Serializable)courses);

@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class Course_Selection extends AppCompatActivity {
         s.setAdapter(adapter);
 
         mTextView = findViewById(R.id.text);
+
     }
 
     public void emptyCourse(View v){
@@ -54,6 +56,8 @@ public class Course_Selection extends AppCompatActivity {
         Spinner s = findViewById(R.id.courseSpinner);
         String name = s.getSelectedItem().toString();
 
+        Course course2play = new Course();
+
         RadioGroup radioGroup = (RadioGroup)findViewById(R.id.courseRG);
 
         int selectedID = radioGroup.getCheckedRadioButtonId();
@@ -64,12 +68,13 @@ public class Course_Selection extends AppCompatActivity {
         GameTypes type = GameTypes.FULL_18;
         if (selectedtext.equals("Front 9")){
             type = GameTypes.FRONT_9;
+            Toast.makeText(this, "Front 9 Selected", Toast.LENGTH_SHORT).show();
         }
         else if (selectedtext.equals("Back 9")){
             type = GameTypes.BACK_9;
+
         }
 
-        Course course2play = new Course();
 
         for (Course course : courseList){
             if(name.equals(course.getName())){
@@ -77,6 +82,7 @@ public class Course_Selection extends AppCompatActivity {
             }
         }
 
+        course2play.setCurrentGame(new Game());
         course2play.getCurrentGame().setType(type);
         Intent intent = new Intent(this, CourseConfirmation.class);
         intent.putExtra("Course", course2play);

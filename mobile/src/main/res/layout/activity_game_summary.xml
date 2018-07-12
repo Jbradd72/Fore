@@ -22,6 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:stretchColumns="*"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TableRow
@@ -311,11 +313,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/hole9" />
             </TableRow>
             <TableRow
-                android:layout_gravity="center_horizontal">
+                android:gravity="center_horizontal">
 
                 <Button
                     android:id="@+id/finishGame"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:onClick="finishGame"

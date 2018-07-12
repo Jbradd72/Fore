@@ -21,18 +21,22 @@ public class statsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_stats);
         course = (Course) getIntent().getSerializableExtra("Course");
 
-        if (course.getCurrentGame().getType().equals(GameTypes.FRONT_9)){
+        if(course.getCurrentGame().getType().equals(GameTypes.FRONT_9)){
             stoppingPoint = 8;
+
         }
         else{
             stoppingPoint = 17;
         }
 
         holeNumber = getIntent().getIntExtra("Hole", -1);
+        TextView textView = findViewById(R.id.holeTitle);
+        textView.setText("Hole: " + ((Integer)(holeNumber + 1)).toString());
+
         Integer score = course.getCurrentGame().getTotal();
         Integer average = course.getHoleAverage(holeNumber);
 
-        TextView textView = findViewById(R.id.score);
+        textView = findViewById(R.id.score);
         textView.setText(score.toString());
 
         textView = findViewById(R.id.averageStrokes);
