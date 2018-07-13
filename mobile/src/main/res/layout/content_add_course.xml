@@ -526,7 +526,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/hole17" />
             </TableRow>
 
-            <TableRow>
+            <TableRow
+                android:gravity="center">
 
                 <Button
                     android:id="@+id/submitButton"

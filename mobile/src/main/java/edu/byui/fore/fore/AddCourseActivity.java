@@ -49,13 +49,19 @@ public class AddCourseActivity extends AppCompatActivity {
         Course newCourse = new Course(pars);
         newCourse.setName(((EditText) findViewById(R.id.acCourseName)).getText().toString());
 
+        Boolean addCourseFlag = true;
         for (Course c : courses){
-            if (courses.get(i).getName().equals(newCourse.getName())){
-                courses.set(i, newCourse);
+            if(c.equals(newCourse)){
+                c = newCourse;
+                addCourseFlag = false;
             }
         }
 
-        courses.add(newCourse);
+        if (addCourseFlag){
+            courses.add(newCourse);
+        }
+
+
         Intent intent = new Intent(this, Course_Selection.class);
         intent.putExtra("Courses", (Serializable)courses);
         startActivity(intent);

@@ -30,6 +30,10 @@ public class Course implements Serializable {
         currentGame = new Game();
     }
 
+    public Boolean equals(Course rh){
+        return this.getName().equals(rh.getName());
+    }
+
     public Queue<Game> getGames(){return games;}
     public void addCurrentGame(){
         if (games.size() < 10){
