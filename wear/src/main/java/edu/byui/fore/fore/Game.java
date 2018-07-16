@@ -1,45 +1,72 @@
 package edu.byui.fore.fore;
-import java.sql.Time;
-import java.util.Date;
-import java.util.Set;
 
-public class Game {
-    Time time;
-    Set<Hole> holes;
-    int type;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import static edu.byui.fore.fore.GameTypes.FULL_18;
+
+public class Game implements Serializable {
+    Long startTime;
+    Long endTime;
+    private List<Hole> holes;
+    GameTypes type;
+    private Integer total;
 
     public Game() {
+        total = 0;
+        holes = new ArrayList<Hole>(18);
         for (int i = 0; i < 18; i++)
         {
             Hole temp = new Hole();
             holes.add(temp);
         }
-        type = 0;
+        type = FULL_18;
 
-        time = (Time) new Date();
     }
 
-    public Time getTime() {
+    public Game(GameTypes type){
+        total = 0;
+        for (int i = 0; i < 18; i++)
+        {
+            Hole temp = new Hole();
+            holes.add(temp);
+        }
+        this.type = type;
+
+       // time = (Time) new Date();
+    }
+
+    public void startTime(){this.startTime = System.currentTimeMillis();}
+
+    public String getTime(){
+        this.endTime = System.currentTimeMillis();
+        Long totalSeconds = (endTime - startTime) / 1000;
+        Integer wholeHours = new Long(totalSeconds / 3600).intValue();
+        Integer wholeMinutes = new Long((totalSeconds % 3600) / 60).intValue();
+        Integer wholeSeconds = new Long((totalSeconds % 3600) % 60).intValue();
+        String time = wholeHours.toString() + " Hours " + wholeMinutes.toString() + " Minutes " + wholeSeconds.toString() + " Seconds ";
+        //String time = new Long(this.endTime - this.startTime).toString();
         return time;
     }
 
-    public void setTime(Time time) {
-        this.time = time;
-    }
-
-    public Set<Hole> getHoles() {
+    public List<Hole> getHoles() {
         return holes;
     }
 
-    public void setHoles(Set<Hole> holes) {
+    public void setHoles(List<Hole> holes) {
         this.holes = holes;
     }
 
-    public int getType() {
+    public GameTypes getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public void setType(GameTypes type) {
         this.type = type;
     }
+
+    public void setTotal(Integer i){this.total = i;}
+
+    public Integer getTotal(){return this.total;}
 }
