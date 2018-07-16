@@ -65,20 +65,23 @@ public class Course implements Serializable {
     public String getName(){return name;}
 
 
-    public Integer getHoleAverage(int index){
-        int totalStrokes = 0;
-        int numHoles = 0;
+    public Float getHoleAverage(int index){
+        float totalStrokes = 0;
+        float numHoles = 0;
         if (games.size() > 0){
             for (Game game: games) {
-                totalStrokes += game.getHoles().get(index).getStrokes();
-                numHoles++;
-            }
+                if(game.getType().equals(GameTypes.FULL_18) || game.getType().equals(currentGame.getType())) {
+                    totalStrokes += game.getHoles().get(index).getStrokes();
+                    numHoles++;
+                }
 
-            return (totalStrokes / numHoles);
+            }
+                return totalStrokes/numHoles;
+
         }
-        else{
-            return 0;
-        }
+
+        return (float)0;
+
 
     }
 

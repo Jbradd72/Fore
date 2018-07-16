@@ -5,9 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class statsActivity extends AppCompatActivity {
     private Course course;
@@ -34,13 +31,16 @@ public class statsActivity extends AppCompatActivity {
         textView.setText("Hole: " + ((Integer)(holeNumber + 1)).toString());
 
         Integer score = course.getCurrentGame().getTotal();
-        Integer average = course.getHoleAverage(holeNumber);
+        Float average = course.getHoleAverage(holeNumber);
 
         textView = findViewById(R.id.score);
         textView.setText(score.toString());
 
         textView = findViewById(R.id.averageStrokes);
         textView.setText(average.toString());
+
+        textView = findViewById((R.id.holePar));
+        textView.setText(course.getPars().get(holeNumber).toString());
 
         textView = findViewById(R.id.currentStrokes);
         textView.setText(((Integer)(course.getCurrentGame().getHoles().get(holeNumber).getStrokes())).toString());

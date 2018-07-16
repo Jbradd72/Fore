@@ -6,7 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".statsActivity">
 
-    <TextView
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:shrinkColumns="*"
+        android:orientation="vertical">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/holeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+    <TableRow
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Total Score:"
+            app:layout_constraintEnd_toStartOf="@+id/score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/holeTitle" />
+        <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,94 +56,125 @@
         app:layout_constraintStart_toStartOf="@+id/holeTitle"
         app:layout_constraintTop_toBottomOf="@+id/holeTitle" />
 
+
+
+
+    </TableRow>
+
+
+    <TableRow
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/prevHole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Strokes"/>
     <TextView
-        android:id="@+id/currentStrokes"
+            android:id="@+id/currentStrokes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="currentStrokes"
+            app:layout_constraintBottom_toTopOf="@+id/holePar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/scoreText"
+            app:layout_constraintTop_toBottomOf="@+id/score" />
+
+
+    </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/pars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Par:" />
+
+    <TextView
+            android:id="@+id/holePar"
+            android:layout_width="75dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:text="Par"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/avgScore"
+        android:layout_width="88dp"
+        android:layout_height="17dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="currentStrokes"
-        app:layout_constraintBottom_toTopOf="@+id/averageStrokes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/scoreText"
-        app:layout_constraintTop_toBottomOf="@+id/score" />
+        android:text="Average Score:"
+        app:layout_constraintBottom_toTopOf="@+id/advanceButton"
+        app:layout_constraintEnd_toStartOf="@+id/holePar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/holePar" />
 
     <TextView
         android:id="@+id/averageStrokes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="averageStrokes"
-        app:layout_constraintBottom_toTopOf="@+id/advanceButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.398"
-        app:layout_constraintStart_toEndOf="@+id/prevHole" />
-
-    <Button
-        android:id="@+id/advanceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:onClick="nextHole"
-        android:text="Next "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/holeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/scoreText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Total Score:"
-        app:layout_constraintEnd_toStartOf="@+id/score"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/holeTitle" />
-
-    <TextView
-        android:id="@+id/prevHole"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Previous Hole"
-        app:layout_constraintBottom_toTopOf="@+id/avgScore"
-        app:layout_constraintEnd_toStartOf="@+id/currentStrokes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scoreText" />
-
-    <TextView
-        android:id="@+id/avgScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="Hole Average:"
+        android:text="Average Strokes"
         app:layout_constraintBottom_toTopOf="@+id/advanceButton"
-        app:layout_constraintEnd_toStartOf="@+id/averageStrokes"
-        app:layout_constraintHorizontal_bias="0.602"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avgScore"
+        app:layout_constraintTop_toBottomOf="@+id/holePar" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/advanceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:onClick="nextHole"
+            android:text="Next "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        </TableRow>
+
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>

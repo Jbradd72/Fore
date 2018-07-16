@@ -50,6 +50,7 @@ public class AddCourseActivity extends AppCompatActivity {
         newCourse.setName(((EditText) findViewById(R.id.acCourseName)).getText().toString());
 
         Boolean addCourseFlag = true;
+
         for (Course c : courses){
             if(c.equals(newCourse)){
                 c = newCourse;

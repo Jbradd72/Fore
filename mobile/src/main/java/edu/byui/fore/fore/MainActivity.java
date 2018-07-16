@@ -39,17 +39,18 @@ public class MainActivity extends AppCompatActivity {
         } catch (FileNotFoundException e) {
            Log.e("ERROR", "No file found");
 
+
         } catch (IOException e) {
             e.printStackTrace();
         }
         Gson gson = new Gson();
         Type listType = new TypeToken<ArrayList<Course>>(){}.getType();
+        courseList = (List<Course>)gson.fromJson(jsonStr, listType);
 
         if(jsonStr.isEmpty()){
 
             courseList = new ArrayList<>();
         }
-        courseList = (List<Course>)gson.fromJson(jsonStr, listType);
 
         if (courseList == null){
         }

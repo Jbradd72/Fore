@@ -27,6 +27,7 @@ public class Course_Selection extends AppCompatActivity {
         courseList = (ArrayList<Course>)getIntent().getSerializableExtra("Courses");
         List<String> courseNamesList = new ArrayList<>();
 
+
         for (Course course : courseList){
             courseNamesList.add(course.getName());
         }
