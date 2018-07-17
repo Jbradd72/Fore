@@ -1,5 +1,6 @@
 package edu.byui.fore.fore;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainWearActivity extends AppCompatActivity {
+public class MainWearActivity extends Activity {
     private List<Course> courseList;
     public static final String FILENAME = "courses.txt";
 
