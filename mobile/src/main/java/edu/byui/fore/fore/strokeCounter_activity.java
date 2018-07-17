@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 
+/**
+ * An activity that counts the amount of strokes inputted from the user. functionality to add or
+ * remove strokes, as well as reset strokes, is added to create ease of use
+ */
 public class strokeCounter_activity extends AppCompatActivity {
     private Integer strokes;
     private Integer holeNumber;
@@ -27,6 +31,10 @@ public class strokeCounter_activity extends AppCompatActivity {
         }
     }
 
+    /**
+     * adds to the current strokes
+     * @param view
+     */
     public void buttonClick(View view){
         strokes++;
 
@@ -35,6 +43,10 @@ public class strokeCounter_activity extends AppCompatActivity {
         textView.setText(strokes.toString());
     }
 
+    /**
+     * decreases the amount of current strokes
+     * @param view
+     */
     public void decrementStrokes(View view){
         strokes--;
 
@@ -42,6 +54,11 @@ public class strokeCounter_activity extends AppCompatActivity {
 
         textView.setText(strokes.toString());
     }
+
+    /**
+     * resets the amount of current strokes
+     * @param view
+     */
     public void resetStrokes(View view){
         strokes = 0;
 
@@ -49,6 +66,11 @@ public class strokeCounter_activity extends AppCompatActivity {
 
         textView.setText(strokes.toString());
     }
+
+    /**
+     * submits the amount of strokes to the stats activity
+     * @param view
+     */
     public void submit(View view){
         Course course = (Course) getIntent().getSerializableExtra("Course");
         course.getCurrentGame().getHoles().get(holeNumber).setStrokes(strokes);

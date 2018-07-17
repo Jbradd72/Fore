@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * the stats activity displays the stat data to the player between each hole. it contains information
+ * from the course, and the number of the hole
+ */
 public class statsActivity extends AppCompatActivity {
     private Course course;
     private Integer holeNumber;
@@ -49,6 +53,10 @@ public class statsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * changes the activity to the next hole, depending on the type of game played
+     * @param view
+     */
     public void nextHole(View view){
         if (holeNumber < stoppingPoint) {
             Intent intent = new Intent(this, strokeCounter_activity.class);

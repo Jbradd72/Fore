@@ -22,6 +22,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Main activity is the front page of the app. reads the proper files and sets up the choice
+ * to either select a course or add a course.
+ */
 public class MainActivity extends AppCompatActivity {
     private List<Course> courseList;
     public static final String FILENAME = "courses.txt";
@@ -57,12 +61,20 @@ public class MainActivity extends AppCompatActivity {
         //Log.w("Main Activity", ((Integer)(courseList.size())).toString());
     }
 
+    /**
+     * changes the activity to the select course activity
+     * @param view
+     */
     public void selectCourse(View view){
         Intent intent = new Intent(this, Course_Selection.class);
         intent.putExtra("Courses", (Serializable)courseList);
         startActivity(intent);
     }
 
+    /**
+     * changes the activity to the add course activity
+     * @param view
+     */
     public void addCourse(View view){
         Intent intent = new Intent(this, AddCourseActivity.class);
         intent.putExtra("Courses", (Serializable)courseList);

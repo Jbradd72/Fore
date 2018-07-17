@@ -15,6 +15,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This activity contains the forms to select a course to play on. Additionally, radio buttons
+ * containing a front nine, back nine, or full 18 are available.
+ */
 public class Course_Selection extends AppCompatActivity {
     private List<Course> courseList;
     private TextView mTextView;
@@ -42,6 +46,10 @@ public class Course_Selection extends AppCompatActivity {
 
     }
 
+    /**
+     * When a player simply wants to play a game without choosing a course, this function is called
+     * @param v the empty form when empty course is selected
+     */
     public void emptyCourse(View v){
         Course emptyCourse = new Course();
 
@@ -53,6 +61,10 @@ public class Course_Selection extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * this function is called when a specific course is selected.
+     * @param v the view containing the selected course from the spinner
+     */
     public void confirmCourse(View v){
         Spinner s = findViewById(R.id.courseSpinner);
         String name = s.getSelectedItem().toString();

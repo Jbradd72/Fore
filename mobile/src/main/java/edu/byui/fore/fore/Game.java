@@ -11,6 +11,10 @@ import edu.byui.fore.fore.GameTypes;
 
 import static edu.byui.fore.fore.GameTypes.*;
 
+/**
+ * encapsulates the idea of a game of golf. Contains the amount of time played, and the number of
+ * holes with their associated data. Also contains the type of game.
+ */
 public class Game implements Serializable {
     Long startTime;
     Long endTime;
@@ -42,8 +46,16 @@ public class Game implements Serializable {
        // time = (Time) new Date();
     }
 
+    /**
+     * starts the timer for the game
+     */
     public void startTime(){this.startTime = System.currentTimeMillis();}
 
+    /**
+     * gets the amount of time from the system, and converts it from milliseconds to hours minutes
+     * and seconds
+     * @return a string that contains the amount of time passed in hours, minutes, and seconds
+     */
     public String getTime(){
         this.endTime = System.currentTimeMillis();
         Long totalSeconds = (endTime - startTime) / 1000;
@@ -55,23 +67,47 @@ public class Game implements Serializable {
         return time;
     }
 
+    /**
+     * gets the holes from the game
+     * @return a list of holes
+     */
     public List<Hole> getHoles() {
         return holes;
     }
 
+    /**
+     * sets a list of holes equivalent to the given list of holes
+     * @param holes a list of holes
+     */
     public void setHoles(List<Hole> holes) {
         this.holes = holes;
     }
 
+    /**
+     * gets the type of game
+     * @return the type of game
+     */
     public GameTypes getType() {
         return type;
     }
 
+    /**
+     * sets the type of game to a given type
+     * @param type
+     */
     public void setType(GameTypes type) {
         this.type = type;
     }
 
+    /**
+     * sets the total score for the game
+     * @param i the total for the game
+     */
     public void setTotal(Integer i){this.total = i;}
 
+    /**
+     * gets the total score from the game
+     * @return an Integer called total
+     */
     public Integer getTotal(){return this.total;}
 }

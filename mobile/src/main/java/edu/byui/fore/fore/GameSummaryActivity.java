@@ -15,6 +15,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * This activity contains the game summary at the end of a game.
+ */
 public class GameSummaryActivity extends AppCompatActivity {
     public static final String FILENAME = "courses.txt";
     Course course;
@@ -47,6 +50,11 @@ public class GameSummaryActivity extends AppCompatActivity {
         Toast.makeText(this, course.getCurrentGame().getTime(),Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Takes the completed game and adds it to the current course, serializing the data into a JSON
+     * string. it then writes to a local file.
+     * @param view
+     */
     public void finishGame(View view){
         course.addCurrentGame();
         ArrayList<Course> courseList = (ArrayList)getIntent().getSerializableExtra("Courses");

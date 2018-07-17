@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * The course confirmation screen makes sure that the user has selected the correct course, and asks
+ * for confirmation
+ */
 public class CourseConfirmation extends AppCompatActivity {
     private Course course2play;
 
@@ -19,6 +23,10 @@ public class CourseConfirmation extends AppCompatActivity {
         textView.setText(course2play.getName());
     }
 
+    /**
+     * submits the course if the user confirms that the selected course is correct
+     * @param v the current view
+     */
     public void submitCourse(View v) {
         int hole = 0;
         if(course2play.getCurrentGame().getType().equals(GameTypes.BACK_9)){
@@ -34,6 +42,10 @@ public class CourseConfirmation extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * goes back to the previous screen if the course selected was incorrect
+     * @param v the current view
+     */
     public void goBack(View v) {
         Intent intent = new Intent(this, Course_Selection.class);
         intent.putExtra("Courses", getIntent().getSerializableExtra("Courses"));
