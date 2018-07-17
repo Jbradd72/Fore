@@ -9,6 +9,10 @@ import java.util.Set;
 import java.util.List;
 import com.google.gson.Gson;
 
+/**
+ * This class encapsulates the idea of a golf course. It contains a queue of games, a list of pars,
+ * the current game, and a name.
+ */
 public class Course implements Serializable {
     Queue<Game> games;
     List<Integer> Pars;

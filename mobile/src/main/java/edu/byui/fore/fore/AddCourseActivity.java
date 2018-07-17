@@ -12,6 +12,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+ /**
+ * This activity is used to add a course to the course list. It takes in a par value for each
+  *  hole in a given course. The user then submits this form an is redirected to the course
+  *  select page.
+ */
 public class AddCourseActivity extends AppCompatActivity {
     private List<Course> courses;
 
@@ -24,6 +29,10 @@ public class AddCourseActivity extends AppCompatActivity {
         courses = (ArrayList<Course>)getIntent().getSerializableExtra("Courses");
     }
 
+     /**
+      * Submits the inputted par values and adds them to the course.
+      * @param view the view that the user submitted the pars to
+      */
     public void submit(View view){
         int[] ids = new int[]{R.id.hole1par,R.id.hole2par,R.id.hole3par, R.id.hole4par, R.id.hole5par,
                               R.id.hole6par, R.id.hole7par, R.id.hole8par, R.id.hole9par, R.id.hole10par,
