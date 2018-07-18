@@ -17,10 +17,18 @@ public class Hole implements Serializable {
         strokes = 0;
     }
 
+    /**
+     * gets the amount of strokes it took to get the ball into the hole
+     * @return an int of the strokes
+     */
     public int getStrokes() {
         return strokes;
     }
 
+    /**
+     * sets the strokes to a given int
+     * @param strokes the number of strokes
+     */
     public void setStrokes(int strokes) {
         this.strokes = strokes;
     }
