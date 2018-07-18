@@ -42,6 +42,8 @@ public class Course_Selection extends AppCompatActivity {
 
     }
 
+    //If the user doesn't want to track their stats and just wants to temporarily store their score
+    //for one game, they can choose the emptyCourse
     public void emptyCourse(View v){
         Course emptyCourse = new Course();
 
@@ -53,30 +55,32 @@ public class Course_Selection extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //This method will send off the course selected in the spinner with the type selected in
+    //the radio group
     public void confirmCourse(View v){
         Spinner s = findViewById(R.id.courseSpinner);
         String name = s.getSelectedItem().toString();
 
         Course course2play = new Course();
 
-        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.courseRG);
+        RadioGroup radioGroup = findViewById(R.id.courseRG);
 
         int selectedID = radioGroup.getCheckedRadioButtonId();
-        RadioButton radioButton = (RadioButton) radioGroup.findViewById(selectedID);
-        String selectedtext =   radioButton.getText().toString();
+        RadioButton radioButton = radioGroup.findViewById(selectedID);
+        String selectedText =   radioButton.getText().toString();
 
 
+        //This if/else if statement determines what the game type will be
         GameTypes type = GameTypes.FULL_18;
-        if (selectedtext.equals("Front 9")){
+        if (selectedText.equals("Front 9")){
             type = GameTypes.FRONT_9;
-            Toast.makeText(this, "Front 9 Selected", Toast.LENGTH_SHORT).show();
         }
-        else if (selectedtext.equals("Back 9")){
+        else if (selectedText.equals("Back 9")){
             type = GameTypes.BACK_9;
-
         }
 
-
+        //This for loop loops through our courseList to determine which course is selected based
+        //on the text selected in the spinner
         for (Course course : courseList){
             if(name.equals(course.getName())){
                 course2play = course;

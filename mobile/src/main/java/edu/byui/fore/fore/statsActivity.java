@@ -18,6 +18,7 @@ public class statsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_stats);
         course = (Course) getIntent().getSerializableExtra("Course");
 
+        //Which hole we stop at depends on the gametype that was selected
         if(course.getCurrentGame().getType().equals(GameTypes.FRONT_9)){
             stoppingPoint = 8;
 
@@ -27,6 +28,9 @@ public class statsActivity extends AppCompatActivity {
         }
 
         holeNumber = getIntent().getIntExtra("Hole", -1);
+
+        //The rest of the onCreate method is simply populating the textViews with the information we
+        //want to display
         TextView textView = findViewById(R.id.holeTitle);
         textView.setText("Hole: " + ((Integer)(holeNumber + 1)).toString());
 
@@ -44,7 +48,6 @@ public class statsActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.currentStrokes);
         textView.setText(((Integer)(course.getCurrentGame().getHoles().get(holeNumber).getStrokes())).toString());
-        //Toast.makeText(this,holeNumber.toString(),Toast.LENGTH_SHORT).show();
 
 
     }

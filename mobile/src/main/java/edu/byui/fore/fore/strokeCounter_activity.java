@@ -20,17 +20,16 @@ public class strokeCounter_activity extends AppCompatActivity {
         setContentView(R.layout.activity_stroke_counter);
         strokes = 0;
         holeNumber = getIntent().getIntExtra("Hole", -1);
-        //Toast.makeText(this, holeNumber.toString(), Toast.LENGTH_SHORT).show();
 
         if (holeNumber < 0){
-            Log.wtf("Stroke Counter Activity", "Negative Hole Number");
+            Log.wtf("STROKE COUNTER ACTIVITY", "Negative Hole Number");
         }
     }
 
-    public void buttonClick(View view){
+    public void incrementStrokes(View view){
         strokes++;
 
-        TextView textView = (TextView) findViewById(R.id.strokes_display);
+        TextView textView = findViewById(R.id.strokes_display);
 
         textView.setText(strokes.toString());
     }
@@ -38,14 +37,14 @@ public class strokeCounter_activity extends AppCompatActivity {
     public void decrementStrokes(View view){
         strokes--;
 
-        TextView textView = (TextView) findViewById(R.id.strokes_display);
+        TextView textView = findViewById(R.id.strokes_display);
 
         textView.setText(strokes.toString());
     }
     public void resetStrokes(View view){
         strokes = 0;
 
-        TextView textView = (TextView) findViewById(R.id.strokes_display);
+        TextView textView = findViewById(R.id.strokes_display);
 
         textView.setText(strokes.toString());
     }

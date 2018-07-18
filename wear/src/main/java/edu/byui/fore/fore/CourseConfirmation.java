@@ -1,12 +1,13 @@
 package edu.byui.fore.fore;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-public class CourseConfirmation extends AppCompatActivity {
+public class CourseConfirmation extends Activity {
     private Course course2play;
 
     @Override

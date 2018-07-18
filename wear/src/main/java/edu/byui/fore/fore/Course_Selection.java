@@ -1,5 +1,6 @@
 package edu.byui.fore.fore;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Course_Selection extends AppCompatActivity {
+public class Course_Selection extends Activity {
     private List<Course> courseList;
     private TextView mTextView;
 

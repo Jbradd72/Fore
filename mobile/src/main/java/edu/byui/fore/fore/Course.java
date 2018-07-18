@@ -1,5 +1,7 @@
 package edu.byui.fore.fore;
 
+import android.location.Location;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,12 +16,15 @@ public class Course implements Serializable {
     List<Integer> Pars;
     Game currentGame;
     String name;
+    Double latitude;
+    Double longitude;
 
     public Course(List<Integer> pars) {
         Pars = pars;
         currentGame = new Game();
         name = "Name not Set";
         games = new LinkedList<>();
+        longitude = latitude = 0.0;
     }
 
     public Course(){
@@ -28,6 +33,19 @@ public class Course implements Serializable {
         Collections.fill(p, 0);
         Pars = p;
         currentGame = new Game();
+        longitude = latitude = 0.0;
+    }
+
+    public float distanceTo(Course c){
+        Location origin = new Location("");
+        Location dest = new Location("");
+        origin.setLatitude(this.latitude);
+        origin.setLongitude(this.longitude);
+
+        dest.setLongitude(c.longitude);
+        dest.setLatitude(c.latitude);
+
+        return origin.distanceTo(dest);
     }
 
     public Boolean equals(Course rh){
@@ -77,7 +95,6 @@ public class Course implements Serializable {
 
             }
                 return totalStrokes/numHoles;
-
         }
 
         return (float)0;

@@ -1,5 +1,6 @@
 package edu.byui.fore.fore;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GameSummaryActivity extends AppCompatActivity {
+public class GameSummaryActivity extends Activity {
     public static final String FILENAME = "courses.txt";
     Course course;
 

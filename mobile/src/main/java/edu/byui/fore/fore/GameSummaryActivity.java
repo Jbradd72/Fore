@@ -3,6 +3,7 @@ package edu.byui.fore.fore;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,11 +33,14 @@ public class GameSummaryActivity extends AppCompatActivity {
         textView = findViewById(R.id.currentScore);
         textView.setText(course.getCurrentGame().getTotal().toString());
 
+
+        //We initialize the ids array with all of the ids we want to loop through later on
         int[] ids = new int[]{R.id.game1score, R.id.game2score, R.id.game3score, R.id.game4score,
                               R.id.game5score, R.id.game6score, R.id.game7score, R.id.game8score,
                               R.id.game9score, R.id.game10score};
         int i = 0;
 
+        //Here we loop through all of the games played in the course and display the scores
         for (Game game: course.getGames()){
             textView = findViewById(ids[i]);
             textView.setText(game.getTotal().toString());
@@ -44,12 +48,19 @@ public class GameSummaryActivity extends AppCompatActivity {
             i++;
         }
 
+        //We show a toast here telling the user how long it took to finish the game
         Toast.makeText(this, course.getCurrentGame().getTime(),Toast.LENGTH_SHORT).show();
     }
 
     public void finishGame(View view){
+        //Add the game just played to the courses list of games
         course.addCurrentGame();
+
         ArrayList<Course> courseList = (ArrayList)getIntent().getSerializableExtra("Courses");
+
+        //This for loop determines if the current game was played on a course that was already
+        //in our list of courses prior to the game just played. If it is, we override it, if not,
+        //we simply add it to the end of the courseList
         Boolean newCourse = true;
         for (int i = 0; i < courseList.size(); i++){
             if (courseList.get(i).getName().equals(course.getName())){
@@ -71,6 +82,7 @@ public class GameSummaryActivity extends AppCompatActivity {
             fileWriter.flush();
             fileWriter.close();
         } catch (IOException e) {
+            Log.e("GAME_SUMMARY_ACTIVITY", "IOException");
             e.printStackTrace();
         }
 

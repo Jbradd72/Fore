@@ -1,19 +1,14 @@
 package edu.byui.fore.fore;
-import android.util.ArraySet;
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Set;
-import edu.byui.fore.fore.GameTypes;
 
 import static edu.byui.fore.fore.GameTypes.*;
 
 public class Game implements Serializable {
-    Long startTime;
-    Long endTime;
+    private Long startTime;
+    private Long endTime;
     private List<Hole> holes;
     GameTypes type;
     private Integer total;
@@ -39,7 +34,6 @@ public class Game implements Serializable {
         }
         this.type = type;
 
-       // time = (Time) new Date();
     }
 
     public void startTime(){this.startTime = System.currentTimeMillis();}
@@ -51,16 +45,11 @@ public class Game implements Serializable {
         Integer wholeMinutes = new Long((totalSeconds % 3600) / 60).intValue();
         Integer wholeSeconds = new Long((totalSeconds % 3600) % 60).intValue();
         String time = wholeHours.toString() + " Hours " + wholeMinutes.toString() + " Minutes " + wholeSeconds.toString() + " Seconds ";
-        //String time = new Long(this.endTime - this.startTime).toString();
         return time;
     }
 
     public List<Hole> getHoles() {
         return holes;
-    }
-
-    public void setHoles(List<Hole> holes) {
-        this.holes = holes;
     }
 
     public GameTypes getType() {

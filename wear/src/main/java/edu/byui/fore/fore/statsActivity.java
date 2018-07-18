@@ -1,12 +1,13 @@
 package edu.byui.fore.fore;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-public class statsActivity extends AppCompatActivity {
+public class statsActivity extends Activity {
     private Course course;
     private Integer holeNumber;
 

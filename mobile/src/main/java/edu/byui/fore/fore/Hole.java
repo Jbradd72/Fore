@@ -13,7 +13,7 @@ public class Hole implements Serializable {
 
     int strokes;
 
-    public Hole() {
+    Hole() {
         strokes = 0;
     }
 

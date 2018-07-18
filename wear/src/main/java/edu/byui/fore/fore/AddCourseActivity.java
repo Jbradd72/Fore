@@ -1,5 +1,6 @@
 package edu.byui.fore.fore;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddCourseActivity extends AppCompatActivity {
+public class AddCourseActivity extends Activity {
     private List<Course> courses;
 
     @Override
