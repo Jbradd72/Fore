@@ -33,11 +33,14 @@ public class Course implements Serializable {
 
     public Course(){
         this.name = "Name not Set";
-        List<Integer> p = new ArrayList<>(18);
-        Collections.fill(p, 0);
-        Pars = p;
+        Pars = new ArrayList<>(18);
+        for (int i = 0; i < 18; i++){
+            Pars.add(0);
+        }
         currentGame = new Game();
         longitude = latitude = 0.0;
+
+        games = new LinkedList<>();
     }
 
     public float distanceTo(Course c){

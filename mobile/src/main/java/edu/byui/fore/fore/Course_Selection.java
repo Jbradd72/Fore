@@ -53,6 +53,25 @@ public class Course_Selection extends AppCompatActivity {
     public void emptyCourse(View v){
         Course emptyCourse = new Course();
 
+        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.courseRG);
+
+        int selectedID = radioGroup.getCheckedRadioButtonId();
+        RadioButton radioButton = (RadioButton) radioGroup.findViewById(selectedID);
+        String selectedtext =   radioButton.getText().toString();
+
+
+        GameTypes type = GameTypes.FULL_18;
+        if (selectedtext.equals("Front 9")){
+            type = GameTypes.FRONT_9;
+            Toast.makeText(this, "Front 9 Selected", Toast.LENGTH_SHORT).show();
+        }
+        else if (selectedtext.equals("Back 9")){
+            type = GameTypes.BACK_9;
+
+        }
+
+        emptyCourse.getCurrentGame().setType(type);
+
         Intent intent = new Intent(this, CourseConfirmation.class);
         intent.putExtra("Course", emptyCourse);
         intent.putExtra("Courses", (Serializable)courseList);

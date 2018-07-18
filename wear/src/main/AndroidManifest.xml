@@ -26,13 +26,37 @@
         <activity
             android:name=".MainWearActivity"
             android:label="@string/app_name">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Course_Selection"/>
+        <activity
+            android:name=".AddCourseActivity"
+            android:label="Fore">
+        </activity>
+        <activity
+            android:name=".Course_Selection"
+            android:label="Fore">
+        </activity>
+        <activity
+            android:name=".CourseConfirmation"
+            android:label="Fore">
+        </activity>
+        <activity
+            android:name=".GameSummaryActivity"
+            android:label="Fore">
+        </activity>
+        <activity
+            android:name=".statsActivity"
+            android:label="Fore">
+        </activity>
+        <activity
+            android:name=".strokeCounter_activity"
+            android:label="Fore">
+        </activity>
     </application>
 
 </manifest>

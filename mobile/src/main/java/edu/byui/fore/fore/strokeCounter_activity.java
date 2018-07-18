@@ -35,7 +35,7 @@ public class strokeCounter_activity extends AppCompatActivity {
      * adds to the current strokes
      * @param view
      */
-    public void buttonClick(View view){
+    public void incrementStrokes(View view){
         strokes++;
 
         TextView textView = (TextView) findViewById(R.id.strokes_display);

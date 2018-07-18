@@ -27,12 +27,14 @@ public class statsActivity extends Activity {
             stoppingPoint = 17;
         }
 
+
         holeNumber = getIntent().getIntExtra("Hole", -1);
+        Integer strokes = course.getCurrentGame().getHoles().get(holeNumber).getStrokes();
         TextView textView = findViewById(R.id.holeTitle);
         textView.setText("Hole: " + ((Integer)(holeNumber + 1)).toString());
 
         Integer score = course.getCurrentGame().getTotal();
-        Float average = course.getHoleAverage(holeNumber);
+        Float average = course.getHoleAverage(holeNumber, strokes);
 
         textView = findViewById(R.id.score);
         textView.setText(score.toString());
@@ -44,7 +46,7 @@ public class statsActivity extends Activity {
         textView.setText(course.getPars().get(holeNumber).toString());
 
         textView = findViewById(R.id.currentStrokes);
-        textView.setText(((Integer)(course.getCurrentGame().getHoles().get(holeNumber).getStrokes())).toString());
+        textView.setText(strokes.toString());
         //Toast.makeText(this,holeNumber.toString(),Toast.LENGTH_SHORT).show();
 
 

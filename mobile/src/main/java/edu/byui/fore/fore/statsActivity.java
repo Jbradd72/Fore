@@ -32,6 +32,7 @@ public class statsActivity extends AppCompatActivity {
         }
 
         holeNumber = getIntent().getIntExtra("Hole", -1);
+        Integer strokes = course.getCurrentGame().getHoles().get(holeNumber).getStrokes();
 
         //The rest of the onCreate method is simply populating the textViews with the information we
         //want to display
@@ -51,7 +52,7 @@ public class statsActivity extends AppCompatActivity {
         textView.setText(course.getPars().get(holeNumber).toString());
 
         textView = findViewById(R.id.currentStrokes);
-        textView.setText(((Integer)(course.getCurrentGame().getHoles().get(holeNumber).getStrokes())).toString());
+        textView.setText(strokes.toString());
 
 
     }

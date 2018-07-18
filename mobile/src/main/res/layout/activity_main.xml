@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/foredrawing">
+
+    </pl.droidsonroids.gif.GifImageView>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

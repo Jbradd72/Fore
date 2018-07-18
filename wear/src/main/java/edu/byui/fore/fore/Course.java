@@ -22,10 +22,12 @@ public class Course implements Serializable {
 
     public Course(){
         this.name = "Name not Set";
-        List<Integer> p = new ArrayList<>(18);
-        Collections.fill(p, 0);
-        Pars = p;
+        Pars = new ArrayList<>(18);
+        for (int i = 0; i < 18; i++){
+            Pars.add(0);
+        }
         currentGame = new Game();
+        games = new LinkedList<>();
     }
 
     public Boolean equals(Course rh){
@@ -63,9 +65,9 @@ public class Course implements Serializable {
     public String getName(){return name;}
 
 
-    public Float getHoleAverage(int index){
-        float totalStrokes = 0;
-        float numHoles = 0;
+    public Float getHoleAverage(int index, int currentScore){
+        float totalStrokes = currentScore;
+        float numHoles = 1;
         if (games.size() > 0){
             for (Game game: games) {
                 if(game.getType().equals(GameTypes.FULL_18) || game.getType().equals(currentGame.getType())) {

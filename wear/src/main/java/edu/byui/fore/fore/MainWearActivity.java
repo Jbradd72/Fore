@@ -48,9 +48,6 @@ public class MainWearActivity extends Activity {
 
             courseList = new ArrayList<>();
         }
-
-        if (courseList == null){
-        }
         //Log.w("Main Activity", ((Integer)(courseList.size())).toString());
     }
 
