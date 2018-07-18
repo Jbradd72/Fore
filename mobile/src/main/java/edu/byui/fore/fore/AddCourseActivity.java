@@ -70,8 +70,7 @@ public class AddCourseActivity extends AppCompatActivity {
         if (addCourseFlag){
             courses.add(newCourse);
         }
-
-
+        
         Intent intent = new Intent(this, Course_Selection.class);
         intent.putExtra("Courses", (Serializable)courses);
         startActivity(intent);
